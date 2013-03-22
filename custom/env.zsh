@@ -1,3 +1,4 @@
+
 # some more ls aliases
 alias ls='ls --color=auto'
 alias ll='ls -alF'
@@ -5,27 +6,45 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lm='ls | more'
 
-####################################################################################################################
+##################### setenv_common #######################
 
 alias cls='clear && ls'
 alias cla='clear && la'
 alias cll='clear && ll'
-alias rm='rm -rf'
-alias fuck_off='sudo shutdown -h now'
-alias hosts_update=''
 
+alias fuck_off='sudo shutdown -h now'
+alias hosts_update='curl https://smarthosts.googlecode.com/svn/trunk/hosts >> ~/.hosts && hostname=`cat /etc/hostname` && echo -n "127.0.0.1  " >> ~/.hosts && echo -n $hostname >> ~/.hosts && sudo cp ~/.hosts /etc/hosts'
 alias wine='env LANG=en_US wine'
 alias sourceinsight='wine /home/jphome/.wine/drive_c/Program\ Files/Source\ Insight\ 3/Insight3.Exe &'
 alias emacs='emacs -nw'
+alias qvfb='qvfb -width 652 -height 500 -depth 16 &'
+alias eclipse='/home/jphome/android/eclipse/eclipse &'
+alias dstat='dstat -cdlmnpsy'
+alias arduino='/media/main/Arduino/arduino-1.0.1/arduino &'
 
 export knowledge=/media/main/knowledge
 export xm=/media/main/project/xm
 
-####################################################################################################################
+#############################################################
 
 
-export r11=/media/main/project/xm/code/R11
-export r10=/media/main/project/xm/code/R10
-export build_dir=/media/main/project/xm/code/Resource/ProductBuilder/General/General/MBD6016E-E
+##################### setenv_android #######################
 
-# export PATH=$(PATH):/usr/local/hisi/DM8107/CodeSourcery/Sourcery_G++_Lite/bin:/usr/local/hisi/hisi-linux-nptl/arm-hisiv100-linux/target/bin:/usr/local/hisi/hisi-linux/x86-arm/arm-hisiv200-linux/target/bin:/usr/local/hisi/hisi-linux/x86-arm/arm-hisiv100-linux/target/bin:/usr/local/hisi/gm-linux/arm-none-linux-gnueabi-4.4.0_ARMv5TE/usr/bin/:/usr/local/hisi/crosstool/arm-linux/gcc-3.4.4-glibc-2.3.5/arm-linux/bin/:/usr/local/hisi/montavista/pro/devkit/arm/v5t_le/bin/:/usr/local/hisi/gm-linux/arm-linux/gcc-3.4.4-glibc-2.3.5/arm-linux/bin:/usr/local/hisi/hisi-linux/x86-arm-hi3515/gcc-3.4.3-uClibc-0.9.28/usr/bin:/usr/local/hisi/hisi-linux/x86-arm-hi3520/gcc-3.4.3-uClibc-0.9.28/usr/bin:/usr/local/hisi/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.29/usr/bin:/usr/local/hisi/hisi-linux/x86-arm/gcc-3.4.3-csl-uClibc-0.9.30-soft/bin/:/usr/local/hisi/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/usr/bin:/usr/local/hisi/hisi-linux/x86-arm/gcc-3.4.3-uClibc-0.9.28/bin:/usr/local/hisi/
+alias eclipse='/home/jphome/android/eclipse/eclipse &'
+alias android_emulator='emulator-arm -avd 2.2 &'
+
+export JAVA_HOME=/home/jphome/android/jdk1.7.0_01
+export JRE_HOME=/home/jphome/android/jdk1.7.0_01/jre
+export PATH=/home/jphome/android/jdk1.7.0_01/bin:$PATH
+export CLASSPATH=.:/home/jphome/android/jdk1.7.0_01/jre/lib
+export PATH=/home/jphome/android/android-sdk-linux/platform-tools:/home/jphome/android/android-sdk-linux/tools:$PATH
+
+export PATH=/home/jphome/android/android-ndk-r5:$PATH
+export ANDROID_NDK_ROOT=/home/jphome/android/android-ndk-r5/
+
+#############################################################
+
+
+##################### setenv_temporary #######################
+
+#############################################################
